@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace TrabajoFinalNomina
 {
-    public partial class AgregarNomina : Form
+    public partial class Nominas : Form
     {
-        public AgregarNomina()
+        public Nominas()
         {
             InitializeComponent();
+        }
+
+        private void editasrToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgregarNomina(object sender, EventArgs e)
+        {
+
         }
     }
 }
