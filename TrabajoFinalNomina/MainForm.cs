@@ -89,7 +89,7 @@ namespace TrabajoFinalNomina
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro de que desea salir?",
+            DialogResult result = MessageBox.Show("¿Está seguro que desea salir?",
                 "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -108,7 +108,7 @@ namespace TrabajoFinalNomina
             {
                 if (frmGenericNominaMensual.HayDatosEnNomina())
                 {
-                    var resultado = MessageBox.Show("¿Desea reemplaar la nomina existente?", "Confirmacion",
+                    var resultado = MessageBox.Show("¿Desea reemplazar la nómina existente?", "Confirmación",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resultado == DialogResult.Yes)
                     {
@@ -135,7 +135,7 @@ namespace TrabajoFinalNomina
             {
                 if (frmGenericNominaQuincenal.HayDatosEnNomina())
                 {
-                    var resultado = MessageBox.Show("¿Desea reemplaar la nomina existente?", "Confirmacion",
+                    var resultado = MessageBox.Show("¿Desea reemplazar la nómina existente?", "Confirmación",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resultado == DialogResult.Yes)
                     {
@@ -162,7 +162,7 @@ namespace TrabajoFinalNomina
             {
                 if (frmGenericNominaSemanal.HayDatosEnNomina())
                 {
-                    var resultado = MessageBox.Show("¿Desea reemplaar la nomina existente?", "Confirmacion",
+                    var resultado = MessageBox.Show("¿Desea reemplazar la nómina existente?", "Confirmación",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resultado == DialogResult.Yes)
                     {

@@ -94,7 +94,7 @@ namespace TrabajoFinalNomina
         }
         private string GenerarResumenNomina(string tipoNomina)
         {
-            string resumen = "Tipo de Nomina: " + tipoNomina + "\n";
+            string resumen = "Tipo de Nómina: " + tipoNomina + "\n";
             resumen += "Resumen de la Nómina:\n";
 
             // Recorre todas las filas del DataGridView (excepto la fila nueva predeterminada)
@@ -220,9 +220,9 @@ namespace TrabajoFinalNomina
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Si tiene problema para llenar los campos que muestran una linea, " +
+            MessageBox.Show("Si tiene problema para llenar los campos que muestran una línea, " +
                 "coloque el cursor al principio del campo y asegurese de ingresar la cantidad, " +
-                "de caracteres requeridas.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                "de caracteres requeridas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
