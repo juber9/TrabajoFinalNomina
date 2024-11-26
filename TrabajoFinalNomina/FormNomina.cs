@@ -220,9 +220,9 @@ namespace TrabajoFinalNomina
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Si tiene problemas par llenar los campos que muestran una linea, " +
+            MessageBox.Show("Si tiene problema para llenar los campos que muestran una linea, " +
                 "coloque el cursor al principio del campo y asegurese de ingresar la cantidad, " +
-                "de carcteres requeridas.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                "de caracteres requeridas.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
