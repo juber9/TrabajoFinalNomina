@@ -40,10 +40,6 @@
             tabPrincipal = new TabControl();
             tabPagePrincipal = new TabPage();
             label3 = new Label();
-            toolStrip1 = new ToolStrip();
-            toolStripButton1 = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
-            toolStripButton3 = new ToolStripButton();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             tabMensual = new TabPage();
@@ -58,7 +54,6 @@
             panelTipoNomina.SuspendLayout();
             tabPrincipal.SuspendLayout();
             tabPagePrincipal.SuspendLayout();
-            toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabMensual.SuspendLayout();
             tabQuincenal.SuspendLayout();
@@ -211,7 +206,6 @@
             // tabPagePrincipal
             // 
             tabPagePrincipal.Controls.Add(label3);
-            tabPagePrincipal.Controls.Add(toolStrip1);
             tabPagePrincipal.Controls.Add(label1);
             tabPagePrincipal.Controls.Add(pictureBox1);
             tabPagePrincipal.Location = new Point(4, 29);
@@ -231,59 +225,6 @@
             label3.Size = new Size(479, 51);
             label3.TabIndex = 7;
             label3.Text = "!Seleccione una de las opciones del panel izquierdo para comenzar¡";
-            // 
-            // toolStrip1
-            // 
-            toolStrip1.Anchor = AnchorStyles.None;
-            toolStrip1.AutoSize = false;
-            toolStrip1.BackColor = Color.Transparent;
-            toolStrip1.Dock = DockStyle.None;
-            toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
-            toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripButton3 });
-            toolStrip1.Location = new Point(116, 514);
-            toolStrip1.Margin = new Padding(10);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(193, 74);
-            toolStrip1.TabIndex = 6;
-            toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageScaling = ToolStripItemImageScaling.None;
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Margin = new Padding(10);
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(36, 54);
-            toolStripButton1.Text = "toolStripButton1";
-            toolStripButton1.ToolTipText = "Guardar Todo";
-            // 
-            // toolStripButton2
-            // 
-            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageScaling = ToolStripItemImageScaling.None;
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Margin = new Padding(10);
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(36, 54);
-            toolStripButton2.Text = "toolStripButton2";
-            toolStripButton2.ToolTipText = "Cargar Datos";
-            // 
-            // toolStripButton3
-            // 
-            toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
-            toolStripButton3.ImageScaling = ToolStripItemImageScaling.None;
-            toolStripButton3.ImageTransparentColor = Color.Magenta;
-            toolStripButton3.Margin = new Padding(10);
-            toolStripButton3.Name = "toolStripButton3";
-            toolStripButton3.Size = new Size(36, 54);
-            toolStripButton3.Text = "toolStripButton3";
-            toolStripButton3.ToolTipText = "Limpiar Todo";
             // 
             // label1
             // 
@@ -394,8 +335,6 @@
             panelTipoNomina.ResumeLayout(false);
             tabPrincipal.ResumeLayout(false);
             tabPagePrincipal.ResumeLayout(false);
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabMensual.ResumeLayout(false);
             tabQuincenal.ResumeLayout(false);
@@ -417,10 +356,6 @@
         private TabControl tabPrincipal;
         private TabPage tabPagePrincipal;
         private Label label3;
-        private ToolStrip toolStrip1;
-        private ToolStripButton toolStripButton1;
-        private ToolStripButton toolStripButton2;
-        private ToolStripButton toolStripButton3;
         private Label label1;
         private PictureBox pictureBox1;
         private TabPage tabMensual;
