@@ -20,6 +20,10 @@ namespace TrabajoFinalNomina
         public FormOpciones()
         {
             InitializeComponent();
+            //ocultar las pestañas al iniciar el programa
+            tabPrincipal.TabPages.Remove(tabMensual);
+            tabPrincipal.TabPages.Remove(tabQuincenal);
+            tabPrincipal.TabPages.Remove(tabSemanal);
         }
 
         private void editasrToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,6 +104,12 @@ namespace TrabajoFinalNomina
 
         private void btnMensual_Click(object sender, EventArgs e)
         {
+            if (!tabPrincipal.TabPages.Contains(tabMensual))//si la pestaña esta en el tabControl, no se integra otra vez
+            {
+                tabPrincipal.TabPages.Add(tabMensual); // Agregar la pestaña Mensual
+            }
+            tabPrincipal.SelectedTab = tabMensual; // Seleccionar la pestaña Mensual
+
             if (frmGenericNominaMensual == null)
             {
                 frmGenericNominaMensual = new FormNomina("Mensual");
@@ -127,6 +137,12 @@ namespace TrabajoFinalNomina
 
         private void btnQuincenal_Click(object sender, EventArgs e)
         {
+            if (!tabPrincipal.TabPages.Contains(tabQuincenal))
+            {
+                tabPrincipal.TabPages.Add(tabQuincenal); // Agregar la pestaña Quincenal
+            }
+            tabPrincipal.SelectedTab = tabQuincenal; // Seleccionar la pestaña Quincenal
+
             if (frmGenericNominaQuincenal == null)
             {
                 frmGenericNominaQuincenal = new FormNomina("Quincenal");
@@ -155,6 +171,12 @@ namespace TrabajoFinalNomina
 
         private void btnSemanal_Click(object sender, EventArgs e)
         {
+            if (!tabPrincipal.TabPages.Contains(tabSemanal))
+            {
+                tabPrincipal.TabPages.Add(tabSemanal); // Agregar la pestaña Semanal
+            }
+            tabPrincipal.SelectedTab = tabSemanal; // Seleccionar la pestaña Semanal
+
             if (frmGenericNominaSemanal == null)
             {
                 frmGenericNominaSemanal = new FormNomina("Semanal");
