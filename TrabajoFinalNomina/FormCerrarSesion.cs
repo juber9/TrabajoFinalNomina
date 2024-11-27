@@ -23,12 +23,5 @@ namespace Canal10
             fm2.Show();
             this.Hide();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form4 fm4 = new Form4();
-            fm4.Show();
-            this.Hide();
-        }
     }
 }

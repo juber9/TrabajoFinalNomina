@@ -12,6 +12,7 @@ namespace TrabajoFinalNomina
 {
     public partial class FormNomina : Form
     {
+        
         private string tipoNomina;
         public FormNomina(string tipoNomina)
         {
@@ -48,41 +49,6 @@ namespace TrabajoFinalNomina
                 dvgNomina.Columns["clmSalarioMensual"].Visible = false;
                 dvgNomina.Columns["clmSalarioQuincenal"].Visible = false;
             }
-        }
-        private void ValidarCampos()
-        {
-            //verifica que todos los campos hallan sido llenados
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                !mtbNoINNS.MaskCompleted ||
-                cmbDepartamento.SelectedItem == null ||
-                string.IsNullOrWhiteSpace(txtSalario.Text) ||
-                !mtbHorasExtra.MaskCompleted ||
-                !mtbAntigüedad.MaskCompleted)
-            {
-                MessageBox.Show("Complete todos los campos para poder calcular", "Campo incompleto.",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            //ubica la informacion de los campos en su respectiva columna
-            int NuevaFila = dvgNomina.Rows.Add();
-            dvgNomina.Rows[NuevaFila].Cells["clmNombre"].Value = txtNombre.Text;
-            dvgNomina.Rows[NuevaFila].Cells["clmNoINNS"].Value = mtbNoINNS.Text;
-            dvgNomina.Rows[NuevaFila].Cells["clmDepartamento"].Value = cmbDepartamento.SelectedItem.ToString();
-            dvgNomina.Rows[NuevaFila].Cells["clmSalarioMensual"].Value = txtSalario.Text;
-            dvgNomina.Rows[NuevaFila].Cells["clmSalarioQuincenal"].Value = txtSalario.Text;
-            dvgNomina.Rows[NuevaFila].Cells["clmSalarioSemanal"].Value = txtSalario.Text;
-            dvgNomina.Rows[NuevaFila].Cells["clmHorasExtras"].Value = mtbHorasExtra.Text;
-            dvgNomina.Rows[NuevaFila].Cells["clmAntigüedad"].Value = mtbAntigüedad.Text;
-           
-            //limpiar campos 
-            txtNombre.Clear();
-            mtbNoINNS.Clear();
-            cmbDepartamento.SelectedIndex = -1;
-            txtSalario.Clear();
-            mtbHorasExtra.Clear();
-            mtbAntigüedad.Clear();
-
         }
         public void LimpiarDataGridview()
         {
@@ -154,12 +120,54 @@ namespace TrabajoFinalNomina
             }
         }
 
-        private void btnCalcular_Click(object sender, EventArgs e)
+        private void Calcular(object sender, EventArgs e)
         {
-            ValidarCampos();
+            string nombre = txtNombre.Text;
+            string numeroInss = mtbNoINNS.Text;
+            string departamento = cmbDepartamento.SelectedItem.ToString();
+            double salario = double.Parse(txtSalario.Text);
+            double horasExtras = double.Parse(mtbHorasExtra.Text);
+            int antiguedad = int.Parse(mtbAntiguedad.Text);
+
+            var calculosNomina = new CalculosNomina(nombre, numeroInss, departamento, salario, horasExtras, antiguedad);
+
+            double totalHorasExtras = calculosNomina.CalcularHorasExtras(horasExtras);
+
+            //verifica que todos los campos hallan sido llenados
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                !mtbNoINNS.MaskCompleted ||
+                cmbDepartamento.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(txtSalario.Text) ||
+                !mtbHorasExtra.MaskCompleted ||
+                !mtbAntiguedad.MaskCompleted)
+            {
+                MessageBox.Show("Complete todos los campos para poder calcular", "Campo incompleto.",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //ubica la informacion de los campos en su respectiva columna
+            int NuevaFila = dvgNomina.Rows.Add();
+            dvgNomina.Rows[NuevaFila].Cells["clmNombre"].Value = txtNombre.Text;
+            dvgNomina.Rows[NuevaFila].Cells["clmNoINNS"].Value = mtbNoINNS.Text;
+            dvgNomina.Rows[NuevaFila].Cells["clmDepartamento"].Value = cmbDepartamento.SelectedItem.ToString();
+            dvgNomina.Rows[NuevaFila].Cells["clmSalarioMensual"].Value = salario.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmSalarioQuincenal"].Value = txtSalario.Text;
+            dvgNomina.Rows[NuevaFila].Cells["clmSalarioSemanal"].Value = txtSalario.Text;
+            dvgNomina.Rows[NuevaFila].Cells["clmHorasExtras"].Value = mtbHorasExtra.Text;
+            dvgNomina.Rows[NuevaFila].Cells["clmIngresoPorHora"].Value = totalHorasExtras.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmAntigüedad"].Value = mtbAntiguedad.Text;
+
+            //limpiar campos 
+            txtNombre.Clear();
+            mtbNoINNS.Clear();
+            cmbDepartamento.SelectedIndex = -1;
+            txtSalario.Clear();
+            mtbHorasExtra.Clear();
+            mtbAntiguedad.Clear();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void Eliminar(object sender, EventArgs e)
         {
             if (dvgNomina.SelectedRows.Count > 0)
             {
@@ -193,7 +201,7 @@ namespace TrabajoFinalNomina
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void Guardar(object sender, EventArgs e)
         {
             // Abrir el cuadro de diálogo para guardar archivo
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -208,7 +216,7 @@ namespace TrabajoFinalNomina
             }
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
+        private void Cargar(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";

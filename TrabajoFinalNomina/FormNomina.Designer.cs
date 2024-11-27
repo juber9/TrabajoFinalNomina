@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            mtbAntigüedad = new MaskedTextBox();
+            mtbAntiguedad = new MaskedTextBox();
             mtbHorasExtra = new MaskedTextBox();
             txtSalario = new TextBox();
             label6 = new Label();
@@ -69,15 +69,15 @@
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // mtbAntigüedad
+            // mtbAntiguedad
             // 
-            mtbAntigüedad.Font = new Font("Cambria", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mtbAntigüedad.Location = new Point(1069, 162);
-            mtbAntigüedad.Mask = "99";
-            mtbAntigüedad.Name = "mtbAntigüedad";
-            mtbAntigüedad.Size = new Size(225, 34);
-            mtbAntigüedad.TabIndex = 27;
-            mtbAntigüedad.ValidatingType = typeof(int);
+            mtbAntiguedad.Font = new Font("Cambria", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            mtbAntiguedad.Location = new Point(1069, 162);
+            mtbAntiguedad.Mask = "99";
+            mtbAntiguedad.Name = "mtbAntiguedad";
+            mtbAntiguedad.Size = new Size(225, 34);
+            mtbAntiguedad.TabIndex = 27;
+            mtbAntiguedad.ValidatingType = typeof(int);
             // 
             // mtbHorasExtra
             // 
@@ -143,7 +143,6 @@
             // 
             mtbNoINNS.Font = new Font("Cambria", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             mtbNoINNS.Location = new Point(412, 109);
-            mtbNoINNS.Mask = "999999999";
             mtbNoINNS.Name = "mtbNoINNS";
             mtbNoINNS.Size = new Size(225, 34);
             mtbNoINNS.TabIndex = 20;
@@ -193,7 +192,7 @@
             dvgNomina.BackgroundColor = SystemColors.ControlLight;
             dvgNomina.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgNomina.Columns.AddRange(new DataGridViewColumn[] { clmNoINNS, clmNombre, clmDepartamento, clmSalarioMensual, clmSalarioQuincenal, clmSalarioSemanal, clmHorasExtras, clmIngresoPorHora, clmAntigüedad, clmTotalIngresos, clmINNSLaboral, clmIR, clmTotalDeducciones, clmSalarioNeto, clmINATEC, clmINNSPatronal, clmVacaciones, clmTreceavoMes });
-            dvgNomina.Location = new Point(12, 251);
+            dvgNomina.Location = new Point(29, 240);
             dvgNomina.Name = "dvgNomina";
             dvgNomina.ReadOnly = true;
             dvgNomina.RowHeadersWidth = 51;
@@ -349,7 +348,7 @@
             btnCalcular.Anchor = AnchorStyles.None;
             btnCalcular.BackColor = Color.FromArgb(116, 86, 171);
             btnCalcular.FlatAppearance.BorderSize = 0;
-            btnCalcular.Font = new Font("Segoe UI", 24F);
+            btnCalcular.Font = new Font("Anton", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCalcular.ForeColor = Color.White;
             btnCalcular.Location = new Point(73, 606);
             btnCalcular.Name = "btnCalcular";
@@ -357,14 +356,14 @@
             btnCalcular.TabIndex = 3;
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = false;
-            btnCalcular.Click += btnCalcular_Click;
+            btnCalcular.Click += Calcular;
             // 
             // btnEliminar
             // 
             btnEliminar.Anchor = AnchorStyles.None;
             btnEliminar.BackColor = Color.FromArgb(116, 86, 171);
             btnEliminar.FlatAppearance.BorderSize = 0;
-            btnEliminar.Font = new Font("Segoe UI", 24F);
+            btnEliminar.Font = new Font("Anton", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
             btnEliminar.Location = new Point(423, 606);
             btnEliminar.Name = "btnEliminar";
@@ -372,14 +371,14 @@
             btnEliminar.TabIndex = 4;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
+            btnEliminar.Click += Eliminar;
             // 
             // btnGuardar
             // 
             btnGuardar.Anchor = AnchorStyles.None;
             btnGuardar.BackColor = Color.FromArgb(116, 86, 171);
             btnGuardar.FlatAppearance.BorderSize = 0;
-            btnGuardar.Font = new Font("Segoe UI", 24F);
+            btnGuardar.Font = new Font("Anton", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
             btnGuardar.Location = new Point(780, 606);
             btnGuardar.Name = "btnGuardar";
@@ -387,14 +386,14 @@
             btnGuardar.TabIndex = 6;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click;
+            btnGuardar.Click += Guardar;
             // 
             // btnCargar
             // 
             btnCargar.Anchor = AnchorStyles.None;
             btnCargar.BackColor = Color.FromArgb(116, 86, 171);
             btnCargar.FlatAppearance.BorderSize = 0;
-            btnCargar.Font = new Font("Segoe UI", 24F);
+            btnCargar.Font = new Font("Anton", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCargar.ForeColor = Color.White;
             btnCargar.Location = new Point(1144, 606);
             btnCargar.Name = "btnCargar";
@@ -402,7 +401,7 @@
             btnCargar.TabIndex = 7;
             btnCargar.Text = "Cargar";
             btnCargar.UseVisualStyleBackColor = false;
-            btnCargar.Click += btnCargar_Click;
+            btnCargar.Click += Cargar;
             // 
             // panel1
             // 
@@ -415,7 +414,7 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(mtbAntigüedad);
+            panel1.Controls.Add(mtbAntiguedad);
             panel1.Controls.Add(txtNombre);
             panel1.Controls.Add(mtbHorasExtra);
             panel1.Controls.Add(label6);
@@ -460,7 +459,7 @@
 
         #endregion
         private Label label1;
-        private MaskedTextBox mtbAntigüedad;
+        private MaskedTextBox mtbAntiguedad;
         private MaskedTextBox mtbHorasExtra;
         private TextBox txtSalario;
         private Label label6;

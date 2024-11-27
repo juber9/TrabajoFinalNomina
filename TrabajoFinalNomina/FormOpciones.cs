@@ -31,7 +31,30 @@ namespace TrabajoFinalNomina
 
         }
 
-        private void btnExpandir_Click(object sender, EventArgs e)
+        private void MostrarFormularioEnPanel(Form formulario, Panel panel)
+        {
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+            panel.Controls.Clear();
+            panel.Controls.Add(formulario);
+            formulario.Show();
+        }
+        private void DesplegarTipoNomina(object sender, EventArgs e)
+        {
+            //solo se despliega si el panelLeft esta expandido
+            if (panelLeft.Width > 75)
+            {
+                _isPanelVisibleTipoNomina = !_isPanelVisibleTipoNomina;
+                panelTipoNomina.Visible = _isPanelVisibleTipoNomina;
+            }
+            else
+            {
+                panelTipoNomina.Visible = false;
+            }
+        }
+
+        private void Expandir(object sender, EventArgs e)
         {
             //expandir o contraer el panel izquierdo
             if (_isPanelExpand)
@@ -69,40 +92,8 @@ namespace TrabajoFinalNomina
                 }
             }
         }
-        private void MostrarFormularioEnPanel(Form formulario, Panel panel)
-        {
-            formulario.TopLevel = false;
-            formulario.FormBorderStyle = FormBorderStyle.None;
-            formulario.Dock = DockStyle.Fill;
-            panel.Controls.Clear();
-            panel.Controls.Add(formulario);
-            formulario.Show();
-        }
-        private void DesplegarTipoNomina(object sender, EventArgs e)
-        {
-            //solo se despliega si el panelLeft esta expandido
-            if (panelLeft.Width > 75)
-            {
-                _isPanelVisibleTipoNomina = !_isPanelVisibleTipoNomina;
-                panelTipoNomina.Visible = _isPanelVisibleTipoNomina;
-            }
-            else
-            {
-                panelTipoNomina.Visible = false;
-            }
-        }
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("¿Está seguro que desea salir?",
-                "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (result == DialogResult.Yes)
-            {
-                Close();
-            }
-        }
-
-        private void btnMensual_Click(object sender, EventArgs e)
+        private void Mensual(object sender, EventArgs e)
         {
             if (!tabPrincipal.TabPages.Contains(tabMensual))//si la pestaña esta en el tabControl, no se integra otra vez
             {
@@ -135,7 +126,7 @@ namespace TrabajoFinalNomina
             MostrarFormularioEnPanel(frmGenericNominaMensual, panelMensual);
         }
 
-        private void btnQuincenal_Click(object sender, EventArgs e)
+        private void Quincenal(object sender, EventArgs e)
         {
             if (!tabPrincipal.TabPages.Contains(tabQuincenal))
             {
@@ -169,7 +160,7 @@ namespace TrabajoFinalNomina
             MostrarFormularioEnPanel(frmGenericNominaQuincenal, panelQuincenal);
         }
 
-        private void btnSemanal_Click(object sender, EventArgs e)
+        private void Semanal(object sender, EventArgs e)
         {
             if (!tabPrincipal.TabPages.Contains(tabSemanal))
             {
@@ -202,9 +193,15 @@ namespace TrabajoFinalNomina
             MostrarFormularioEnPanel(frmGenericNominaSemanal, panelSemanal);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Salir(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("¿Está seguro que desea salir?",
+                "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }

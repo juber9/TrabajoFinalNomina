@@ -76,7 +76,7 @@
             btnSalir.Dock = DockStyle.Top;
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Font = new Font("Segoe UI", 12F);
+            btnSalir.Font = new Font("Anton", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSalir.ForeColor = Color.White;
             btnSalir.Image = (Image)resources.GetObject("btnSalir.Image");
             btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
@@ -87,7 +87,7 @@
             btnSalir.TabIndex = 5;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            btnSalir.Click += Salir;
             // 
             // panelTipoNomina
             // 
@@ -108,7 +108,7 @@
             btnSemanal.Dock = DockStyle.Top;
             btnSemanal.FlatAppearance.BorderSize = 0;
             btnSemanal.FlatStyle = FlatStyle.Flat;
-            btnSemanal.Font = new Font("Segoe UI", 12F);
+            btnSemanal.Font = new Font("Anton", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSemanal.ForeColor = Color.White;
             btnSemanal.Image = (Image)resources.GetObject("btnSemanal.Image");
             btnSemanal.ImageAlign = ContentAlignment.MiddleLeft;
@@ -119,7 +119,7 @@
             btnSemanal.TabIndex = 3;
             btnSemanal.Text = "Semanal";
             btnSemanal.UseVisualStyleBackColor = false;
-            btnSemanal.Click += btnSemanal_Click;
+            btnSemanal.Click += Semanal;
             // 
             // btnQuincenal
             // 
@@ -127,7 +127,7 @@
             btnQuincenal.Dock = DockStyle.Top;
             btnQuincenal.FlatAppearance.BorderSize = 0;
             btnQuincenal.FlatStyle = FlatStyle.Flat;
-            btnQuincenal.Font = new Font("Segoe UI", 12F);
+            btnQuincenal.Font = new Font("Anton", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnQuincenal.ForeColor = Color.White;
             btnQuincenal.Image = (Image)resources.GetObject("btnQuincenal.Image");
             btnQuincenal.ImageAlign = ContentAlignment.MiddleLeft;
@@ -138,7 +138,7 @@
             btnQuincenal.TabIndex = 2;
             btnQuincenal.Text = "Quincenal";
             btnQuincenal.UseVisualStyleBackColor = false;
-            btnQuincenal.Click += btnQuincenal_Click;
+            btnQuincenal.Click += Quincenal;
             // 
             // btnMensual
             // 
@@ -146,7 +146,7 @@
             btnMensual.Dock = DockStyle.Top;
             btnMensual.FlatAppearance.BorderSize = 0;
             btnMensual.FlatStyle = FlatStyle.Flat;
-            btnMensual.Font = new Font("Segoe UI", 12F);
+            btnMensual.Font = new Font("Anton", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMensual.ForeColor = Color.White;
             btnMensual.Image = (Image)resources.GetObject("btnMensual.Image");
             btnMensual.ImageAlign = ContentAlignment.MiddleLeft;
@@ -157,14 +157,14 @@
             btnMensual.TabIndex = 1;
             btnMensual.Text = "Mensual";
             btnMensual.UseVisualStyleBackColor = false;
-            btnMensual.Click += btnMensual_Click;
+            btnMensual.Click += Mensual;
             // 
             // btnTipoNomina
             // 
             btnTipoNomina.Dock = DockStyle.Top;
             btnTipoNomina.FlatAppearance.BorderSize = 0;
             btnTipoNomina.FlatStyle = FlatStyle.Flat;
-            btnTipoNomina.Font = new Font("Segoe UI", 12F);
+            btnTipoNomina.Font = new Font("Anton", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTipoNomina.ForeColor = Color.White;
             btnTipoNomina.Image = (Image)resources.GetObject("btnTipoNomina.Image");
             btnTipoNomina.ImageAlign = ContentAlignment.MiddleLeft;
@@ -179,6 +179,8 @@
             // 
             // btnExpandir
             // 
+            btnExpandir.AllowDrop = true;
+            btnExpandir.BackColor = Color.DarkSlateBlue;
             btnExpandir.Dock = DockStyle.Top;
             btnExpandir.Font = new Font("Cambria", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExpandir.ForeColor = SystemColors.ActiveCaptionText;
@@ -187,8 +189,8 @@
             btnExpandir.Size = new Size(250, 53);
             btnExpandir.TabIndex = 0;
             btnExpandir.Text = "≡";
-            btnExpandir.UseVisualStyleBackColor = true;
-            btnExpandir.Click += btnExpandir_Click;
+            btnExpandir.UseVisualStyleBackColor = false;
+            btnExpandir.Click += Expandir;
             // 
             // tabPrincipal
             // 
@@ -225,7 +227,7 @@
             label3.Name = "label3";
             label3.Size = new Size(509, 91);
             label3.TabIndex = 7;
-            label3.Text = "!Seleccione una de las opciones del panel izquierdo para comenzar¡";
+            label3.Text = "Seleccione una de las opciones del panel izquierdo para comenzar";
             // 
             // label1
             // 
@@ -237,7 +239,6 @@
             label1.Size = new Size(556, 411);
             label1.TabIndex = 1;
             label1.Text = "¡BIENVENIDO AL SISTEMA DE CÁLULO DE NÓMINA!";
-            label1.Click += label1_Click;
             // 
             // pictureBox1
             // 
