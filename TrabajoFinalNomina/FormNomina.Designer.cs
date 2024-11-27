@@ -123,7 +123,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1 });
             toolStrip1.Location = new Point(1384, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(81, 27);
+            toolStrip1.Size = new Size(42, 27);
             toolStrip1.TabIndex = 32;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -140,7 +140,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(761, 153);
+            pictureBox6.Location = new Point(760, 153);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(30, 29);
             pictureBox6.TabIndex = 31;
@@ -149,7 +149,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(761, 103);
+            pictureBox4.Location = new Point(760, 103);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(30, 29);
             pictureBox4.TabIndex = 30;
@@ -158,7 +158,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(761, 57);
+            pictureBox3.Location = new Point(760, 57);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(30, 29);
             pictureBox3.TabIndex = 29;
