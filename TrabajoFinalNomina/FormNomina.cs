@@ -74,7 +74,8 @@ namespace TrabajoFinalNomina
             dvgNomina.Rows[NuevaFila].Cells["clmSalarioSemanal"].Value = txtSalario.Text;
             dvgNomina.Rows[NuevaFila].Cells["clmHorasExtras"].Value = mtbHorasExtra.Text;
             dvgNomina.Rows[NuevaFila].Cells["clmAntigüedad"].Value = mtbAntigüedad.Text;
-
+           
+            //limpiar campos 
             txtNombre.Clear();
             mtbNoINNS.Clear();
             cmbDepartamento.SelectedIndex = -1;
@@ -119,11 +120,11 @@ namespace TrabajoFinalNomina
                 string[] lineas = File.ReadAllLines(rutaArchivo);
                 //obtener el tipo de nomina del archivo
                 string tipoNominaEnArchivo = lineas.FirstOrDefault()?.Split(':')[1]?.Trim();
-                if (tipoNominaEnArchivo != tipoNomina) // Compara el tipo de nómina con el actual
+                if (tipoNominaEnArchivo != tipoNomina) // Compara el tipo de nómina que desea ingresar
                 {
                     MessageBox.Show("El tipo de nómina en el archivo no coincide con el tipo de nómina seleccionado.",
                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // Si no coinciden, no cargues los datos
+                    return; // Si no coinciden, no carga los datos
                 }
                 // Limpia el DataGridView antes de cargar los datos
                 dvgNomina.Rows.Clear();
