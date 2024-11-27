@@ -219,10 +219,10 @@
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
-            label3.Font = new Font("Cambria", 12F, FontStyle.Bold);
+            label3.Font = new Font("Cambria", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(116, 453);
             label3.Name = "label3";
-            label3.Size = new Size(479, 51);
+            label3.Size = new Size(485, 66);
             label3.TabIndex = 7;
             label3.Text = "!Seleccione una de las opciones del panel izquierdo para comenzar¡";
             // 
