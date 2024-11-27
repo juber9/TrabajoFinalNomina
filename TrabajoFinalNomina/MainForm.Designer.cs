@@ -48,8 +48,6 @@
             panelQuincenal = new Panel();
             tabSemanal = new TabPage();
             panelSemanal = new Panel();
-            tabResumen = new TabPage();
-            panelResumen = new Panel();
             panelLeft.SuspendLayout();
             panelTipoNomina.SuspendLayout();
             tabPrincipal.SuspendLayout();
@@ -58,12 +56,11 @@
             tabMensual.SuspendLayout();
             tabQuincenal.SuspendLayout();
             tabSemanal.SuspendLayout();
-            tabResumen.SuspendLayout();
             SuspendLayout();
             // 
             // panelLeft
             // 
-            panelLeft.BackColor = Color.FromArgb(23, 24, 29);
+            panelLeft.BackColor = Color.FromArgb(48, 56, 90);
             panelLeft.Controls.Add(btnSalir);
             panelLeft.Controls.Add(panelTipoNomina);
             panelLeft.Controls.Add(btnTipoNomina);
@@ -79,7 +76,7 @@
             btnSalir.Dock = DockStyle.Top;
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Font = new Font("Cambria", 12F, FontStyle.Bold);
+            btnSalir.Font = new Font("Segoe UI", 12F);
             btnSalir.ForeColor = Color.White;
             btnSalir.Image = (Image)resources.GetObject("btnSalir.Image");
             btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
@@ -94,7 +91,7 @@
             // 
             // panelTipoNomina
             // 
-            panelTipoNomina.BackColor = Color.FromArgb(32, 33, 36);
+            panelTipoNomina.BackColor = Color.FromArgb(48, 56, 79);
             panelTipoNomina.Controls.Add(btnSemanal);
             panelTipoNomina.Controls.Add(btnQuincenal);
             panelTipoNomina.Controls.Add(btnMensual);
@@ -107,10 +104,11 @@
             // 
             // btnSemanal
             // 
+            btnSemanal.BackColor = Color.FromArgb(48, 56, 79);
             btnSemanal.Dock = DockStyle.Top;
             btnSemanal.FlatAppearance.BorderSize = 0;
             btnSemanal.FlatStyle = FlatStyle.Flat;
-            btnSemanal.Font = new Font("Cambria", 12F, FontStyle.Bold);
+            btnSemanal.Font = new Font("Segoe UI", 12F);
             btnSemanal.ForeColor = Color.White;
             btnSemanal.Image = (Image)resources.GetObject("btnSemanal.Image");
             btnSemanal.ImageAlign = ContentAlignment.MiddleLeft;
@@ -120,15 +118,16 @@
             btnSemanal.Size = new Size(250, 79);
             btnSemanal.TabIndex = 3;
             btnSemanal.Text = "Semanal";
-            btnSemanal.UseVisualStyleBackColor = true;
+            btnSemanal.UseVisualStyleBackColor = false;
             btnSemanal.Click += btnSemanal_Click;
             // 
             // btnQuincenal
             // 
+            btnQuincenal.BackColor = Color.FromArgb(48, 56, 79);
             btnQuincenal.Dock = DockStyle.Top;
             btnQuincenal.FlatAppearance.BorderSize = 0;
             btnQuincenal.FlatStyle = FlatStyle.Flat;
-            btnQuincenal.Font = new Font("Cambria", 12F, FontStyle.Bold);
+            btnQuincenal.Font = new Font("Segoe UI", 12F);
             btnQuincenal.ForeColor = Color.White;
             btnQuincenal.Image = (Image)resources.GetObject("btnQuincenal.Image");
             btnQuincenal.ImageAlign = ContentAlignment.MiddleLeft;
@@ -138,15 +137,16 @@
             btnQuincenal.Size = new Size(250, 79);
             btnQuincenal.TabIndex = 2;
             btnQuincenal.Text = "Quincenal";
-            btnQuincenal.UseVisualStyleBackColor = true;
+            btnQuincenal.UseVisualStyleBackColor = false;
             btnQuincenal.Click += btnQuincenal_Click;
             // 
             // btnMensual
             // 
+            btnMensual.BackColor = Color.FromArgb(48, 56, 79);
             btnMensual.Dock = DockStyle.Top;
             btnMensual.FlatAppearance.BorderSize = 0;
             btnMensual.FlatStyle = FlatStyle.Flat;
-            btnMensual.Font = new Font("Cambria", 12F, FontStyle.Bold);
+            btnMensual.Font = new Font("Segoe UI", 12F);
             btnMensual.ForeColor = Color.White;
             btnMensual.Image = (Image)resources.GetObject("btnMensual.Image");
             btnMensual.ImageAlign = ContentAlignment.MiddleLeft;
@@ -156,7 +156,7 @@
             btnMensual.Size = new Size(250, 79);
             btnMensual.TabIndex = 1;
             btnMensual.Text = "Mensual";
-            btnMensual.UseVisualStyleBackColor = true;
+            btnMensual.UseVisualStyleBackColor = false;
             btnMensual.Click += btnMensual_Click;
             // 
             // btnTipoNomina
@@ -164,7 +164,7 @@
             btnTipoNomina.Dock = DockStyle.Top;
             btnTipoNomina.FlatAppearance.BorderSize = 0;
             btnTipoNomina.FlatStyle = FlatStyle.Flat;
-            btnTipoNomina.Font = new Font("Cambria", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTipoNomina.Font = new Font("Segoe UI", 12F);
             btnTipoNomina.ForeColor = Color.White;
             btnTipoNomina.Image = (Image)resources.GetObject("btnTipoNomina.Image");
             btnTipoNomina.ImageAlign = ContentAlignment.MiddleLeft;
@@ -181,6 +181,7 @@
             // 
             btnExpandir.Dock = DockStyle.Top;
             btnExpandir.Font = new Font("Cambria", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExpandir.ForeColor = SystemColors.ActiveCaptionText;
             btnExpandir.Location = new Point(0, 0);
             btnExpandir.Name = "btnExpandir";
             btnExpandir.Size = new Size(250, 53);
@@ -195,7 +196,6 @@
             tabPrincipal.Controls.Add(tabMensual);
             tabPrincipal.Controls.Add(tabQuincenal);
             tabPrincipal.Controls.Add(tabSemanal);
-            tabPrincipal.Controls.Add(tabResumen);
             tabPrincipal.Dock = DockStyle.Fill;
             tabPrincipal.Location = new Point(250, 0);
             tabPrincipal.Name = "tabPrincipal";
@@ -205,6 +205,7 @@
             // 
             // tabPagePrincipal
             // 
+            tabPagePrincipal.BackColor = Color.FromArgb(48, 56, 79);
             tabPagePrincipal.Controls.Add(label3);
             tabPagePrincipal.Controls.Add(label1);
             tabPagePrincipal.Controls.Add(pictureBox1);
@@ -214,34 +215,36 @@
             tabPagePrincipal.Size = new Size(1460, 786);
             tabPagePrincipal.TabIndex = 0;
             tabPagePrincipal.Text = "Principal";
-            tabPagePrincipal.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
-            label3.Font = new Font("Cambria", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(116, 453);
+            label3.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(106, 509);
             label3.Name = "label3";
-            label3.Size = new Size(485, 66);
+            label3.Size = new Size(509, 91);
             label3.TabIndex = 7;
             label3.Text = "!Seleccione una de las opciones del panel izquierdo para comenzar¡";
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
-            label1.Font = new Font("Cambria", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(101, 74);
+            label1.Font = new Font("Segoe UI", 44F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(88, 107);
             label1.Name = "label1";
-            label1.Size = new Size(581, 388);
+            label1.Size = new Size(556, 411);
             label1.TabIndex = 1;
             label1.Text = "!BIENVENIDO AL SISTEMA DE CÁLULO DE NÓMINA¡";
+            label1.Click += label1_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(710, 58);
+            pictureBox1.Location = new Point(710, 80);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(682, 548);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -303,32 +306,15 @@
             panelSemanal.Size = new Size(1460, 786);
             panelSemanal.TabIndex = 0;
             // 
-            // tabResumen
-            // 
-            tabResumen.Controls.Add(panelResumen);
-            tabResumen.Location = new Point(4, 29);
-            tabResumen.Name = "tabResumen";
-            tabResumen.Padding = new Padding(3);
-            tabResumen.Size = new Size(1460, 786);
-            tabResumen.TabIndex = 4;
-            tabResumen.Text = "Resumen";
-            tabResumen.UseVisualStyleBackColor = true;
-            // 
-            // panelResumen
-            // 
-            panelResumen.Dock = DockStyle.Fill;
-            panelResumen.Location = new Point(3, 3);
-            panelResumen.Name = "panelResumen";
-            panelResumen.Size = new Size(1454, 780);
-            panelResumen.TabIndex = 0;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1718, 819);
             Controls.Add(tabPrincipal);
             Controls.Add(panelLeft);
+            ForeColor = SystemColors.ControlLightLight;
             Name = "MainForm";
             Text = "Nominas";
             panelLeft.ResumeLayout(false);
@@ -339,7 +325,6 @@
             tabMensual.ResumeLayout(false);
             tabQuincenal.ResumeLayout(false);
             tabSemanal.ResumeLayout(false);
-            tabResumen.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -364,7 +349,5 @@
         private Panel panelQuincenal;
         private TabPage tabSemanal;
         private Panel panelSemanal;
-        private TabPage tabResumen;
-        private Panel panelResumen;
     }
 }

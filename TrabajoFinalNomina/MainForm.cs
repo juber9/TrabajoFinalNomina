@@ -134,7 +134,7 @@ namespace TrabajoFinalNomina
             else
             {
                 if (frmGenericNominaQuincenal.HayDatosEnNomina())//si el usario hace clik en el buton habiendo cargado una nomina
-                    //anteriormente
+                                                                 //anteriormente
                 {
                     var resultado = MessageBox.Show("¿Desea reemplazar la nómina existente?", "Confirmación",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -178,6 +178,11 @@ namespace TrabajoFinalNomina
             tabPrincipal.SelectedTab = tabSemanal;
             frmGenericNominaSemanal.AjustarColumnas("Semanal");
             MostrarFormularioEnPanel(frmGenericNominaSemanal, panelSemanal);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
