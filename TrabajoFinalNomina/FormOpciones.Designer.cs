@@ -236,7 +236,7 @@
             label1.Name = "label1";
             label1.Size = new Size(556, 411);
             label1.TabIndex = 1;
-            label1.Text = "!BIENVENIDO AL SISTEMA DE CÁLULO DE NÓMINA¡";
+            label1.Text = "¡BIENVENIDO AL SISTEMA DE CÁLULO DE NÓMINA!";
             label1.Click += label1_Click;
             // 
             // pictureBox1
@@ -306,7 +306,7 @@
             panelSemanal.Size = new Size(1460, 786);
             panelSemanal.TabIndex = 0;
             // 
-            // MainForm
+            // FormOpciones
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -315,7 +315,7 @@
             Controls.Add(tabPrincipal);
             Controls.Add(panelLeft);
             ForeColor = SystemColors.ControlLightLight;
-            Name = "MainForm";
+            Name = "FormOpciones";
             Text = "Nominas";
             panelLeft.ResumeLayout(false);
             panelTipoNomina.ResumeLayout(false);
