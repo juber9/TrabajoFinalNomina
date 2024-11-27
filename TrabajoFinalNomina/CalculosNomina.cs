@@ -35,25 +35,30 @@ namespace TrabajoFinalNomina
         public double CalcularAntiguedad(int antiguedad)
         {
             double calculoAntiguedad = 0;
-            if (antiguedad == 10)
+            if (antiguedad >= 10)
             {
                 calculoAntiguedad = Salario * 0.11;
             } 
-            else if (antiguedad == 20)
+            else if (antiguedad >= 20)
             {
                 calculoAntiguedad = Salario * 0.4;
             }
-            else if (antiguedad == 25)
+            else if (antiguedad >= 25)
             {
                 calculoAntiguedad = Salario * 0.45;
             }
+            else
+            {
+                calculoAntiguedad = 0;
+            }
+
             return calculoAntiguedad;
         }
 
         public double CalcularTotalIngresos(double Salario, double calculoHorasExtra, double calculoAntiguedad)
         {
-            double totalDeIngresos = Salario + calculoHorasExtra + calculoAntiguedad;
-            return totalDeIngresos;
+            double totalIngresos = Salario + calculoHorasExtra + calculoAntiguedad;
+            return totalIngresos;
         }
     }
 }

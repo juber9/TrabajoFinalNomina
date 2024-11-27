@@ -132,6 +132,7 @@ namespace TrabajoFinalNomina
             var calculosNomina = new CalculosNomina(nombre, numeroInss, departamento, salario, horasExtras, antiguedad);
 
             double totalHorasExtras = calculosNomina.CalcularHorasExtras(horasExtras);
+            double calculoAntiguedad = calculosNomina.CalcularAntiguedad(antiguedad);
 
             //verifica que todos los campos hallan sido llenados
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
@@ -156,7 +157,7 @@ namespace TrabajoFinalNomina
             dvgNomina.Rows[NuevaFila].Cells["clmSalarioSemanal"].Value = txtSalario.Text;
             dvgNomina.Rows[NuevaFila].Cells["clmHorasExtras"].Value = mtbHorasExtra.Text;
             dvgNomina.Rows[NuevaFila].Cells["clmIngresoPorHora"].Value = totalHorasExtras.ToString("C2");
-            dvgNomina.Rows[NuevaFila].Cells["clmAntigüedad"].Value = mtbAntiguedad.Text;
+            dvgNomina.Rows[NuevaFila].Cells["clmAntiguedad"].Value = calculoAntiguedad.ToString("C2");
 
             //limpiar campos 
             txtNombre.Clear();
