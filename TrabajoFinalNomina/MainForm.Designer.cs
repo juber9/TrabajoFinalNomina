@@ -180,7 +180,7 @@
             // btnExpandir
             // 
             btnExpandir.Dock = DockStyle.Top;
-            btnExpandir.Font = new Font("Cambria", 18F, FontStyle.Bold);
+            btnExpandir.Font = new Font("Cambria", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExpandir.Location = new Point(0, 0);
             btnExpandir.Name = "btnExpandir";
             btnExpandir.Size = new Size(250, 53);
