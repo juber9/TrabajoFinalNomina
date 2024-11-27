@@ -1,8 +1,8 @@
 namespace Canal10
 {
-    public partial class Form1 : Form
+    public partial class FormCarga : Form
     {
-        public Form1()
+        public FormCarga()
         {
             InitializeComponent();
         }
@@ -13,7 +13,7 @@ namespace Canal10
             if (panel1.Width >= 599)
             {
                 timer1.Stop();
-                Form2 fm2 = new Form2();
+                FormRegistro fm2 = new FormRegistro();
                 fm2.Show();
                 this.Hide();
             }

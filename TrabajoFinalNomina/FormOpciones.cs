@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace TrabajoFinalNomina
 {
-    public partial class MainForm : Form
+    public partial class FormOpciones : Form
     {
         private FormNomina frmGenericNominaMensual;//acceder a metodos
         private FormNomina frmGenericNominaQuincenal;
         private FormNomina frmGenericNominaSemanal;
         private bool _isPanelVisibleTipoNomina = false;
         private bool _isPanelExpand = false;
-        public MainForm()
+        public FormOpciones()
         {
             InitializeComponent();
         }

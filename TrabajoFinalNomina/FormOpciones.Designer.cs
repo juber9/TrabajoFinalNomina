@@ -1,6 +1,6 @@
 ﻿namespace TrabajoFinalNomina
 {
-    partial class MainForm
+    partial class FormOpciones
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOpciones));
             panelLeft = new Panel();
             btnSalir = new Button();
             panelTipoNomina = new Panel();

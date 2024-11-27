@@ -1,6 +1,6 @@
 ﻿namespace Canal10
 {
-    partial class Form5
+    partial class FormCerrarSesion
     {
         /// <summary>
         /// Required designer variable.

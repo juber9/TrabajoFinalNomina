@@ -25,7 +25,7 @@ namespace Canal10
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form5 fm5 = new Form5();
+            FormCerrarSesion fm5 = new FormCerrarSesion();
             fm5.Show();
             this.Hide();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Canal10
 {
-    partial class Form1
+    partial class FormCarga
     {
         /// <summary>
         ///  Required designer variable.

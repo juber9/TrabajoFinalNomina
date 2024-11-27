@@ -10,24 +10,24 @@ using System.Windows.Forms;
 
 namespace Canal10
 {
-    public partial class Form2 : Form
+    public partial class FormCerrarSesion : Form
     {
-        public Form2()
+        public FormCerrarSesion()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Form3 fm3 = new Form3();
-            fm3.Show();
+            FormRegistro fm2 = new FormRegistro();
+            fm2.Show();
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Form3 fm3 = new Form3();
-            fm3.Show();
+            Form4 fm4 = new Form4();
+            fm4.Show();
             this.Hide();
         }
     }
