@@ -30,12 +30,11 @@
         {
             button3 = new Button();
             label5 = new Label();
-            button2 = new Button();
-            button1 = new Button();
+            btnInciarSesion = new Button();
             checkBox1 = new CheckBox();
-            textBox2 = new TextBox();
+            this.txtContraseña = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtUsuario = new TextBox();
             label2 = new Label();
             label1 = new Label();
             SuspendLayout();
@@ -68,37 +67,22 @@
             label5.TabIndex = 22;
             label5.Text = "Do you wan t an account?";
             // 
-            // button2
+            // btnInciarSesion
             // 
-            button2.BackColor = Color.White;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Nirmala UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(116, 86, 171);
-            button2.Location = new Point(406, 207);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(241, 49);
-            button2.TabIndex = 21;
-            button2.Text = "CLEAR";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(116, 86, 171);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Nirmala UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(406, 131);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(241, 49);
-            button1.TabIndex = 20;
-            button1.Text = "LOG IN";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += LogIn;
+            btnInciarSesion.BackColor = Color.FromArgb(116, 86, 171);
+            btnInciarSesion.Cursor = Cursors.Hand;
+            btnInciarSesion.FlatAppearance.BorderSize = 0;
+            btnInciarSesion.FlatStyle = FlatStyle.Flat;
+            btnInciarSesion.Font = new Font("Nirmala UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInciarSesion.ForeColor = Color.White;
+            btnInciarSesion.Location = new Point(406, 131);
+            btnInciarSesion.Margin = new Padding(3, 4, 3, 4);
+            btnInciarSesion.Name = "btnInciarSesion";
+            btnInciarSesion.Size = new Size(241, 49);
+            btnInciarSesion.TabIndex = 20;
+            btnInciarSesion.Text = "LOG IN";
+            btnInciarSesion.UseVisualStyleBackColor = false;
+            btnInciarSesion.Click += LogIn;
             // 
             // checkBox1
             // 
@@ -114,15 +98,15 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
-            // textBox2
+            // txtContraseña
             // 
-            textBox2.BackColor = Color.FromArgb(230, 231, 233);
-            textBox2.Location = new Point(37, 247);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(286, 29);
-            textBox2.TabIndex = 16;
+            this.txtContraseña.BackColor = Color.FromArgb(230, 231, 233);
+            this.txtContraseña.Location = new Point(37, 247);
+            this.txtContraseña.Margin = new Padding(3, 4, 3, 4);
+            this.txtContraseña.Multiline = true;
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new Size(286, 29);
+            this.txtContraseña.TabIndex = 16;
             // 
             // label3
             // 
@@ -135,15 +119,15 @@
             label3.TabIndex = 15;
             label3.Text = "Password";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.BackColor = Color.FromArgb(230, 231, 233);
-            textBox1.Location = new Point(37, 163);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(286, 29);
-            textBox1.TabIndex = 14;
+            txtUsuario.BackColor = Color.FromArgb(230, 231, 233);
+            txtUsuario.Location = new Point(37, 163);
+            txtUsuario.Margin = new Padding(3, 4, 3, 4);
+            txtUsuario.Multiline = true;
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(286, 29);
+            txtUsuario.TabIndex = 14;
             // 
             // label2
             // 
@@ -175,12 +159,11 @@
             ClientSize = new Size(685, 460);
             Controls.Add(button3);
             Controls.Add(label5);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnInciarSesion);
             Controls.Add(checkBox1);
-            Controls.Add(textBox2);
+            Controls.Add(this.txtContraseña);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtUsuario);
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -197,11 +180,12 @@
         private Button button3;
         private Label label5;
         private Button button2;
-        private Button button1;
+        private Button btnInciarSesion;
         private CheckBox checkBox1;
+        private TextBox txtContraseña;
         private TextBox textBox2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtUsuario;
         private Label label2;
         private Label label1;
     }

@@ -30,14 +30,13 @@
         {
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtUsuario = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtContraseña = new TextBox();
+            txtConfirmarContraseña = new TextBox();
             label4 = new Label();
             checkBox1 = new CheckBox();
-            button1 = new Button();
-            button2 = new Button();
+            btnRegistro = new Button();
             label5 = new Label();
             button3 = new Button();
             SuspendLayout();
@@ -64,15 +63,15 @@
             label2.TabIndex = 1;
             label2.Text = "Username";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.BackColor = Color.FromArgb(230, 231, 233);
-            textBox1.Location = new Point(40, 125);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(286, 29);
-            textBox1.TabIndex = 2;
+            txtUsuario.BackColor = Color.FromArgb(230, 231, 233);
+            txtUsuario.Location = new Point(40, 125);
+            txtUsuario.Margin = new Padding(3, 4, 3, 4);
+            txtUsuario.Multiline = true;
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(286, 29);
+            txtUsuario.TabIndex = 2;
             // 
             // label3
             // 
@@ -85,25 +84,25 @@
             label3.TabIndex = 3;
             label3.Text = "Password";
             // 
-            // textBox2
+            // txtContraseña
             // 
-            textBox2.BackColor = Color.FromArgb(230, 231, 233);
-            textBox2.Location = new Point(40, 209);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(286, 29);
-            textBox2.TabIndex = 4;
+            txtContraseña.BackColor = Color.FromArgb(230, 231, 233);
+            txtContraseña.Location = new Point(40, 209);
+            txtContraseña.Margin = new Padding(3, 4, 3, 4);
+            txtContraseña.Multiline = true;
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.Size = new Size(286, 29);
+            txtContraseña.TabIndex = 4;
             // 
-            // textBox3
+            // txtConfirmarContraseña
             // 
-            textBox3.BackColor = Color.FromArgb(230, 231, 233);
-            textBox3.Location = new Point(40, 301);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(286, 29);
-            textBox3.TabIndex = 6;
+            txtConfirmarContraseña.BackColor = Color.FromArgb(230, 231, 233);
+            txtConfirmarContraseña.Location = new Point(40, 301);
+            txtConfirmarContraseña.Margin = new Padding(3, 4, 3, 4);
+            txtConfirmarContraseña.Multiline = true;
+            txtConfirmarContraseña.Name = "txtConfirmarContraseña";
+            txtConfirmarContraseña.Size = new Size(286, 29);
+            txtConfirmarContraseña.TabIndex = 6;
             // 
             // label4
             // 
@@ -129,37 +128,21 @@
             checkBox1.Text = "Show Password";
             checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnRegistro
             // 
-            button1.BackColor = Color.FromArgb(116, 86, 171);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Nirmala UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(409, 93);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(241, 49);
-            button1.TabIndex = 8;
-            button1.Text = "REGISTER";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.White;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Nirmala UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(116, 86, 171);
-            button2.Location = new Point(409, 169);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(241, 49);
-            button2.TabIndex = 9;
-            button2.Text = "CLEAR";
-            button2.UseVisualStyleBackColor = false;
+            btnRegistro.BackColor = Color.FromArgb(116, 86, 171);
+            btnRegistro.Cursor = Cursors.Hand;
+            btnRegistro.FlatAppearance.BorderSize = 0;
+            btnRegistro.FlatStyle = FlatStyle.Flat;
+            btnRegistro.Font = new Font("Nirmala UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistro.ForeColor = Color.White;
+            btnRegistro.Location = new Point(409, 93);
+            btnRegistro.Margin = new Padding(3, 4, 3, 4);
+            btnRegistro.Name = "btnRegistro";
+            btnRegistro.Size = new Size(241, 49);
+            btnRegistro.TabIndex = 8;
+            btnRegistro.Text = "REGISTER";
+            btnRegistro.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -189,7 +172,7 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
-            // Form2
+            // FormRegistro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -197,19 +180,18 @@
             ClientSize = new Size(685, 460);
             Controls.Add(button3);
             Controls.Add(label5);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnRegistro);
             Controls.Add(checkBox1);
-            Controls.Add(textBox3);
+            Controls.Add(txtConfirmarContraseña);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(txtContraseña);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtUsuario);
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Form2";
+            Name = "FormRegistro";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             ResumeLayout(false);
@@ -220,14 +202,13 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txtUsuario;
         private Label label3;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtContraseña;
+        private TextBox txtConfirmarContraseña;
         private Label label4;
         private CheckBox checkBox1;
-        private Button button1;
-        private Button button2;
+        private Button btnRegistro;
         private Label label5;
         private Button button3;
     }

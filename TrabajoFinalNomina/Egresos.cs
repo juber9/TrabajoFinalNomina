@@ -21,45 +21,37 @@ namespace TrabajoFinalNomina
 
         public double CalcularIr(double totalIngresos, double inssLaboral)
         {
-            double calculandoIr;
-            calculandoIr = totalIngresos * 2;
-            calculandoIr = calculandoIr - inssLaboral * 2;
-            calculandoIr = calculandoIr * 12;
+            // Cálculo del ingreso sujeto a IR
+            double ingresoNetoAnual = (totalIngresos - inssLaboral) * 12;
 
-            if (calculandoIr > 100000.01)
+            double ir;
+
+            // Calcular IR según los tramos
+            if (ingresoNetoAnual <= 100000)
             {
-                calculandoIr -= 100000;
-                calculandoIr *= 0.15;
-                calculandoIr = calculandoIr / 12;
+                ir = 0;
             }
-            else if (calculandoIr < 200000.01)
+            else if (ingresoNetoAnual <= 200000)
             {
-                calculandoIr -= 200000;
-                calculandoIr *= 0.20;
-                calculandoIr += 15000;
-                calculandoIr = calculandoIr / 12;
+                ir = (ingresoNetoAnual - 100000) * 0.15;
             }
-            else if (calculandoIr > 350000.01)
+            else if (ingresoNetoAnual <= 350000)
             {
-                calculandoIr -= 350000;
-                calculandoIr *= 0.25;
-                calculandoIr += 45000;
-                calculandoIr = calculandoIr / 12;
+                ir = (ingresoNetoAnual - 200000) * 0.20 + 15000;
             }
-            else if (calculandoIr > 500000.01)
+            else if (ingresoNetoAnual <= 500000)
             {
-                calculandoIr -= 500000;
-                calculandoIr *= 0.30;
-                calculandoIr += 825000;
-                calculandoIr = calculandoIr / 12;
-            } else if (calculandoIr <= 100000)
+                ir = (ingresoNetoAnual - 350000) * 0.25 + 45000;
+            }
+            else
             {
-                calculandoIr = 0;
+                ir = (ingresoNetoAnual - 500000) * 0.30 + 82500;
             }
 
-            double ir = calculandoIr;
-            return ir;
+            // Convertir el IR anual a mensual
+            return ir / 12;
         }
+
 
         public double CalcularTotalDeducciones(double inssLaboral, double ir)
         {
