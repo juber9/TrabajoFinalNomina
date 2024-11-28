@@ -247,8 +247,8 @@ namespace TrabajoFinalNomina
                 MessageBox.Show("La nómina se ha guardado exitosamente.",
                     "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
+            }
+       
         private void Cargar(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
