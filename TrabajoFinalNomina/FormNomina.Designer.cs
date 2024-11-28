@@ -41,6 +41,12 @@
             txtNombre = new TextBox();
             label1 = new Label();
             dvgNomina = new DataGridView();
+            btnCalcular = new Button();
+            btnEliminar = new Button();
+            btnGuardar = new Button();
+            btnCargar = new Button();
+            panel1 = new Panel();
+            label7 = new Label();
             clmNoINNS = new DataGridViewTextBoxColumn();
             clmNombre = new DataGridViewTextBoxColumn();
             clmDepartamento = new DataGridViewTextBoxColumn();
@@ -49,22 +55,16 @@
             clmSalarioSemanal = new DataGridViewTextBoxColumn();
             clmHorasExtras = new DataGridViewTextBoxColumn();
             clmIngresoPorHora = new DataGridViewTextBoxColumn();
-            clmAntigüedad = new DataGridViewTextBoxColumn();
+            clmAntiguedad = new DataGridViewTextBoxColumn();
             clmTotalIngresos = new DataGridViewTextBoxColumn();
-            clmINNSLaboral = new DataGridViewTextBoxColumn();
+            clmINSSLaboral = new DataGridViewTextBoxColumn();
             clmIR = new DataGridViewTextBoxColumn();
             clmTotalDeducciones = new DataGridViewTextBoxColumn();
             clmSalarioNeto = new DataGridViewTextBoxColumn();
             clmINATEC = new DataGridViewTextBoxColumn();
-            clmINNSPatronal = new DataGridViewTextBoxColumn();
+            clmINSSPatronal = new DataGridViewTextBoxColumn();
             clmVacaciones = new DataGridViewTextBoxColumn();
             clmTreceavoMes = new DataGridViewTextBoxColumn();
-            btnCalcular = new Button();
-            btnEliminar = new Button();
-            btnGuardar = new Button();
-            btnCargar = new Button();
-            panel1 = new Panel();
-            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dvgNomina).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -191,157 +191,13 @@
             dvgNomina.Anchor = AnchorStyles.None;
             dvgNomina.BackgroundColor = SystemColors.ControlLight;
             dvgNomina.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvgNomina.Columns.AddRange(new DataGridViewColumn[] { clmNoINNS, clmNombre, clmDepartamento, clmSalarioMensual, clmSalarioQuincenal, clmSalarioSemanal, clmHorasExtras, clmIngresoPorHora, clmAntigüedad, clmTotalIngresos, clmINNSLaboral, clmIR, clmTotalDeducciones, clmSalarioNeto, clmINATEC, clmINNSPatronal, clmVacaciones, clmTreceavoMes });
+            dvgNomina.Columns.AddRange(new DataGridViewColumn[] { clmNoINNS, clmNombre, clmDepartamento, clmSalarioMensual, clmSalarioQuincenal, clmSalarioSemanal, clmHorasExtras, clmIngresoPorHora, clmAntiguedad, clmTotalIngresos, clmINSSLaboral, clmIR, clmTotalDeducciones, clmSalarioNeto, clmINATEC, clmINSSPatronal, clmVacaciones, clmTreceavoMes });
             dvgNomina.Location = new Point(29, 240);
             dvgNomina.Name = "dvgNomina";
             dvgNomina.ReadOnly = true;
             dvgNomina.RowHeadersWidth = 51;
             dvgNomina.Size = new Size(1426, 337);
             dvgNomina.TabIndex = 2;
-            // 
-            // clmNoINNS
-            // 
-            clmNoINNS.HeaderText = "No. INNS";
-            clmNoINNS.MinimumWidth = 6;
-            clmNoINNS.Name = "clmNoINNS";
-            clmNoINNS.ReadOnly = true;
-            clmNoINNS.Width = 125;
-            // 
-            // clmNombre
-            // 
-            clmNombre.HeaderText = "Nombre";
-            clmNombre.MinimumWidth = 6;
-            clmNombre.Name = "clmNombre";
-            clmNombre.ReadOnly = true;
-            clmNombre.Width = 125;
-            // 
-            // clmDepartamento
-            // 
-            clmDepartamento.HeaderText = "Departamento";
-            clmDepartamento.MinimumWidth = 6;
-            clmDepartamento.Name = "clmDepartamento";
-            clmDepartamento.ReadOnly = true;
-            clmDepartamento.Width = 125;
-            // 
-            // clmSalarioMensual
-            // 
-            clmSalarioMensual.HeaderText = "Salario Mensual";
-            clmSalarioMensual.MinimumWidth = 6;
-            clmSalarioMensual.Name = "clmSalarioMensual";
-            clmSalarioMensual.ReadOnly = true;
-            clmSalarioMensual.Width = 125;
-            // 
-            // clmSalarioQuincenal
-            // 
-            clmSalarioQuincenal.HeaderText = "Salario Quincenal";
-            clmSalarioQuincenal.MinimumWidth = 6;
-            clmSalarioQuincenal.Name = "clmSalarioQuincenal";
-            clmSalarioQuincenal.ReadOnly = true;
-            clmSalarioQuincenal.Width = 125;
-            // 
-            // clmSalarioSemanal
-            // 
-            clmSalarioSemanal.HeaderText = "Salario Semanal";
-            clmSalarioSemanal.MinimumWidth = 6;
-            clmSalarioSemanal.Name = "clmSalarioSemanal";
-            clmSalarioSemanal.ReadOnly = true;
-            clmSalarioSemanal.Width = 125;
-            // 
-            // clmHorasExtras
-            // 
-            clmHorasExtras.HeaderText = "Horas Extras";
-            clmHorasExtras.MinimumWidth = 6;
-            clmHorasExtras.Name = "clmHorasExtras";
-            clmHorasExtras.ReadOnly = true;
-            clmHorasExtras.Width = 125;
-            // 
-            // clmIngresoPorHora
-            // 
-            clmIngresoPorHora.HeaderText = "Ingreso por hora";
-            clmIngresoPorHora.MinimumWidth = 6;
-            clmIngresoPorHora.Name = "clmIngresoPorHora";
-            clmIngresoPorHora.ReadOnly = true;
-            clmIngresoPorHora.Width = 125;
-            // 
-            // clmAntigüedad
-            // 
-            clmAntigüedad.HeaderText = "Antigüedad";
-            clmAntigüedad.MinimumWidth = 6;
-            clmAntigüedad.Name = "clmAntigüedad";
-            clmAntigüedad.ReadOnly = true;
-            clmAntigüedad.Width = 125;
-            // 
-            // clmTotalIngresos
-            // 
-            clmTotalIngresos.HeaderText = "Total de Ingresos";
-            clmTotalIngresos.MinimumWidth = 6;
-            clmTotalIngresos.Name = "clmTotalIngresos";
-            clmTotalIngresos.ReadOnly = true;
-            clmTotalIngresos.Width = 125;
-            // 
-            // clmINNSLaboral
-            // 
-            clmINNSLaboral.HeaderText = "INNS Laboral";
-            clmINNSLaboral.MinimumWidth = 6;
-            clmINNSLaboral.Name = "clmINNSLaboral";
-            clmINNSLaboral.ReadOnly = true;
-            clmINNSLaboral.Width = 125;
-            // 
-            // clmIR
-            // 
-            clmIR.HeaderText = "IR";
-            clmIR.MinimumWidth = 6;
-            clmIR.Name = "clmIR";
-            clmIR.ReadOnly = true;
-            clmIR.Width = 125;
-            // 
-            // clmTotalDeducciones
-            // 
-            clmTotalDeducciones.HeaderText = "Total Deducciones";
-            clmTotalDeducciones.MinimumWidth = 6;
-            clmTotalDeducciones.Name = "clmTotalDeducciones";
-            clmTotalDeducciones.ReadOnly = true;
-            clmTotalDeducciones.Width = 125;
-            // 
-            // clmSalarioNeto
-            // 
-            clmSalarioNeto.HeaderText = "Salario Neto";
-            clmSalarioNeto.MinimumWidth = 6;
-            clmSalarioNeto.Name = "clmSalarioNeto";
-            clmSalarioNeto.ReadOnly = true;
-            clmSalarioNeto.Width = 125;
-            // 
-            // clmINATEC
-            // 
-            clmINATEC.HeaderText = "INATEC";
-            clmINATEC.MinimumWidth = 6;
-            clmINATEC.Name = "clmINATEC";
-            clmINATEC.ReadOnly = true;
-            clmINATEC.Width = 125;
-            // 
-            // clmINNSPatronal
-            // 
-            clmINNSPatronal.HeaderText = "INNS Patronal";
-            clmINNSPatronal.MinimumWidth = 6;
-            clmINNSPatronal.Name = "clmINNSPatronal";
-            clmINNSPatronal.ReadOnly = true;
-            clmINNSPatronal.Width = 125;
-            // 
-            // clmVacaciones
-            // 
-            clmVacaciones.HeaderText = "Vacaciones";
-            clmVacaciones.MinimumWidth = 6;
-            clmVacaciones.Name = "clmVacaciones";
-            clmVacaciones.ReadOnly = true;
-            clmVacaciones.Width = 125;
-            // 
-            // clmTreceavoMes
-            // 
-            clmTreceavoMes.HeaderText = "Treceavo mes";
-            clmTreceavoMes.MinimumWidth = 6;
-            clmTreceavoMes.Name = "clmTreceavoMes";
-            clmTreceavoMes.ReadOnly = true;
-            clmTreceavoMes.Width = 125;
             // 
             // btnCalcular
             // 
@@ -437,6 +293,150 @@
             label7.TabIndex = 28;
             label7.Text = "Datos:";
             // 
+            // clmNoINNS
+            // 
+            clmNoINNS.HeaderText = "No. INNS";
+            clmNoINNS.MinimumWidth = 6;
+            clmNoINNS.Name = "clmNoINNS";
+            clmNoINNS.ReadOnly = true;
+            clmNoINNS.Width = 125;
+            // 
+            // clmNombre
+            // 
+            clmNombre.HeaderText = "Nombre";
+            clmNombre.MinimumWidth = 6;
+            clmNombre.Name = "clmNombre";
+            clmNombre.ReadOnly = true;
+            clmNombre.Width = 125;
+            // 
+            // clmDepartamento
+            // 
+            clmDepartamento.HeaderText = "Departamento";
+            clmDepartamento.MinimumWidth = 6;
+            clmDepartamento.Name = "clmDepartamento";
+            clmDepartamento.ReadOnly = true;
+            clmDepartamento.Width = 125;
+            // 
+            // clmSalarioMensual
+            // 
+            clmSalarioMensual.HeaderText = "Salario Mensual";
+            clmSalarioMensual.MinimumWidth = 6;
+            clmSalarioMensual.Name = "clmSalarioMensual";
+            clmSalarioMensual.ReadOnly = true;
+            clmSalarioMensual.Width = 125;
+            // 
+            // clmSalarioQuincenal
+            // 
+            clmSalarioQuincenal.HeaderText = "Salario Quincenal";
+            clmSalarioQuincenal.MinimumWidth = 6;
+            clmSalarioQuincenal.Name = "clmSalarioQuincenal";
+            clmSalarioQuincenal.ReadOnly = true;
+            clmSalarioQuincenal.Width = 125;
+            // 
+            // clmSalarioSemanal
+            // 
+            clmSalarioSemanal.HeaderText = "Salario Semanal";
+            clmSalarioSemanal.MinimumWidth = 6;
+            clmSalarioSemanal.Name = "clmSalarioSemanal";
+            clmSalarioSemanal.ReadOnly = true;
+            clmSalarioSemanal.Width = 125;
+            // 
+            // clmHorasExtras
+            // 
+            clmHorasExtras.HeaderText = "Horas Extras";
+            clmHorasExtras.MinimumWidth = 6;
+            clmHorasExtras.Name = "clmHorasExtras";
+            clmHorasExtras.ReadOnly = true;
+            clmHorasExtras.Width = 125;
+            // 
+            // clmIngresoPorHora
+            // 
+            clmIngresoPorHora.HeaderText = "Ingreso por hora";
+            clmIngresoPorHora.MinimumWidth = 6;
+            clmIngresoPorHora.Name = "clmIngresoPorHora";
+            clmIngresoPorHora.ReadOnly = true;
+            clmIngresoPorHora.Width = 125;
+            // 
+            // clmAntiguedad
+            // 
+            clmAntiguedad.HeaderText = "Antigüedad";
+            clmAntiguedad.MinimumWidth = 6;
+            clmAntiguedad.Name = "clmAntiguedad";
+            clmAntiguedad.ReadOnly = true;
+            clmAntiguedad.Width = 125;
+            // 
+            // clmTotalIngresos
+            // 
+            clmTotalIngresos.HeaderText = "Total de Ingresos";
+            clmTotalIngresos.MinimumWidth = 6;
+            clmTotalIngresos.Name = "clmTotalIngresos";
+            clmTotalIngresos.ReadOnly = true;
+            clmTotalIngresos.Width = 125;
+            // 
+            // clmINSSLaboral
+            // 
+            clmINSSLaboral.HeaderText = "INSS Laboral";
+            clmINSSLaboral.MinimumWidth = 6;
+            clmINSSLaboral.Name = "clmINSSLaboral";
+            clmINSSLaboral.ReadOnly = true;
+            clmINSSLaboral.Width = 125;
+            // 
+            // clmIR
+            // 
+            clmIR.HeaderText = "IR";
+            clmIR.MinimumWidth = 6;
+            clmIR.Name = "clmIR";
+            clmIR.ReadOnly = true;
+            clmIR.Width = 125;
+            // 
+            // clmTotalDeducciones
+            // 
+            clmTotalDeducciones.HeaderText = "Total Deducciones";
+            clmTotalDeducciones.MinimumWidth = 6;
+            clmTotalDeducciones.Name = "clmTotalDeducciones";
+            clmTotalDeducciones.ReadOnly = true;
+            clmTotalDeducciones.Width = 125;
+            // 
+            // clmSalarioNeto
+            // 
+            clmSalarioNeto.HeaderText = "Salario Neto";
+            clmSalarioNeto.MinimumWidth = 6;
+            clmSalarioNeto.Name = "clmSalarioNeto";
+            clmSalarioNeto.ReadOnly = true;
+            clmSalarioNeto.Width = 125;
+            // 
+            // clmINATEC
+            // 
+            clmINATEC.HeaderText = "INATEC";
+            clmINATEC.MinimumWidth = 6;
+            clmINATEC.Name = "clmINATEC";
+            clmINATEC.ReadOnly = true;
+            clmINATEC.Width = 125;
+            // 
+            // clmINSSPatronal
+            // 
+            clmINSSPatronal.HeaderText = "INSS Patronal";
+            clmINSSPatronal.MinimumWidth = 6;
+            clmINSSPatronal.Name = "clmINSSPatronal";
+            clmINSSPatronal.ReadOnly = true;
+            clmINSSPatronal.Width = 125;
+            // 
+            // clmVacaciones
+            // 
+            clmVacaciones.HeaderText = "Vacaciones";
+            clmVacaciones.MinimumWidth = 6;
+            clmVacaciones.Name = "clmVacaciones";
+            clmVacaciones.ReadOnly = true;
+            clmVacaciones.Width = 125;
+            // 
+            // clmTreceavoMes
+            // 
+            clmTreceavoMes.HeaderText = "Treceavo mes";
+            clmTreceavoMes.MinimumWidth = 6;
+            clmTreceavoMes.Name = "clmTreceavoMes";
+            clmTreceavoMes.ReadOnly = true;
+            clmTreceavoMes.Width = 125;
+            // 
             // FormNomina
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -471,6 +471,12 @@
         private Label label2;
         private TextBox txtNombre;
         private DataGridView dvgNomina;
+        private Button btnCalcular;
+        private Button btnEliminar;
+        private Button btnGuardar;
+        private Button btnCargar;
+        private Panel panel1;
+        private Label label7;
         private DataGridViewTextBoxColumn clmNoINNS;
         private DataGridViewTextBoxColumn clmNombre;
         private DataGridViewTextBoxColumn clmDepartamento;
@@ -479,21 +485,15 @@
         private DataGridViewTextBoxColumn clmSalarioSemanal;
         private DataGridViewTextBoxColumn clmHorasExtras;
         private DataGridViewTextBoxColumn clmIngresoPorHora;
-        private DataGridViewTextBoxColumn clmAntigüedad;
+        private DataGridViewTextBoxColumn clmAntiguedad;
         private DataGridViewTextBoxColumn clmTotalIngresos;
-        private DataGridViewTextBoxColumn clmINNSLaboral;
+        private DataGridViewTextBoxColumn clmINSSLaboral;
         private DataGridViewTextBoxColumn clmIR;
         private DataGridViewTextBoxColumn clmTotalDeducciones;
         private DataGridViewTextBoxColumn clmSalarioNeto;
         private DataGridViewTextBoxColumn clmINATEC;
-        private DataGridViewTextBoxColumn clmINNSPatronal;
+        private DataGridViewTextBoxColumn clmINSSPatronal;
         private DataGridViewTextBoxColumn clmVacaciones;
         private DataGridViewTextBoxColumn clmTreceavoMes;
-        private Button btnCalcular;
-        private Button btnEliminar;
-        private Button btnGuardar;
-        private Button btnCargar;
-        private Panel panel1;
-        private Label label7;
     }
 }

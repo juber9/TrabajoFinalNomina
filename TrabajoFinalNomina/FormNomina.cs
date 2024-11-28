@@ -122,30 +122,44 @@ namespace TrabajoFinalNomina
 
         private void Calcular(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text;
-            string numeroInss = mtbNoINNS.Text;
-            string departamento = cmbDepartamento.SelectedItem.ToString();
-            double salario = double.Parse(txtSalario.Text);
-            double horasExtras = double.Parse(mtbHorasExtra.Text);
-            int antiguedad = int.Parse(mtbAntiguedad.Text);
-
-            var calculosNomina = new CalculosNomina(nombre, numeroInss, departamento, salario, horasExtras, antiguedad);
-
-            double totalHorasExtras = calculosNomina.CalcularHorasExtras(horasExtras);
-            double calculoAntiguedad = calculosNomina.CalcularAntiguedad(antiguedad);
-
-            //verifica que todos los campos hallan sido llenados
+            // Verifica que todos los campos hayan sido llenados
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 !mtbNoINNS.MaskCompleted ||
-                cmbDepartamento.SelectedItem == null ||
+                cmbDepartamento.SelectedItem == null ||  // Verifica que haya un ítem seleccionado
                 string.IsNullOrWhiteSpace(txtSalario.Text) ||
                 !mtbHorasExtra.MaskCompleted ||
                 !mtbAntiguedad.MaskCompleted)
             {
                 MessageBox.Show("Complete todos los campos para poder calcular", "Campo incompleto.",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return; // Detiene la ejecución si hay un campo vacío
             }
+
+            // Ahora es seguro acceder a los valores de los 
+            string nombre = txtNombre.Text;
+            string numeroInss = mtbNoINNS.Text;
+            string departamento = cmbDepartamento.SelectedItem.ToString();
+            double salario = string.IsNullOrWhiteSpace(txtSalario.Text) ? 0 : double.Parse(txtSalario.Text);
+            double horasExtras = string.IsNullOrWhiteSpace(mtbHorasExtra.Text) ? 0 : double.Parse(mtbHorasExtra.Text);
+            int antiguedad = string.IsNullOrWhiteSpace(mtbAntiguedad.Text) ? 0 : int.Parse(mtbAntiguedad.Text);
+            //double salario = double.Parse(txtSalario.Text);
+            //double horasExtras = double.Parse(mtbHorasExtra.Text);
+            //int antiguedad = int.Parse(mtbAntiguedad.Text);
+
+            var calculosNomina = new CalculosNomina(nombre, numeroInss, departamento, salario, horasExtras, antiguedad);
+            var egresos = new Egresos(nombre, numeroInss, departamento, salario, horasExtras, antiguedad);
+
+            double totalHorasExtras = calculosNomina.CalcularHorasExtras(horasExtras);
+            double calculoAntiguedad = calculosNomina.CalcularAntiguedad(antiguedad);
+            double calculoTotalIngresos = calculosNomina.CalcularTotalIngresos(salario, totalHorasExtras, calculoAntiguedad);
+            double calculoInssLaboral = egresos.CalcularInssLaboral(calculoTotalIngresos);
+            double calculoIr = egresos.CalcularIr(calculoTotalIngresos, calculoInssLaboral);
+            double calculoDeducciones = egresos.CalcularTotalDeducciones(calculoInssLaboral, calculoIr);
+            double calculoSalarioNeto = egresos.CalcularRemuneracionNetaDelSalario(calculoTotalIngresos, calculoDeducciones);
+            double calculoInatec = egresos.CalcularInatec(calculoTotalIngresos);
+            double calculoInssPatronal = egresos.CalcularInssPatronal(calculoTotalIngresos);
+            double calculoVacaciones= egresos.CalcularVacaciones(calculoTotalIngresos);
+            double calculoTreceavoMes = egresos.CalcularTreceavoMes(calculoTotalIngresos);
 
             //ubica la informacion de los campos en su respectiva columna
             int NuevaFila = dvgNomina.Rows.Add();
@@ -158,6 +172,15 @@ namespace TrabajoFinalNomina
             dvgNomina.Rows[NuevaFila].Cells["clmHorasExtras"].Value = mtbHorasExtra.Text;
             dvgNomina.Rows[NuevaFila].Cells["clmIngresoPorHora"].Value = totalHorasExtras.ToString("C2");
             dvgNomina.Rows[NuevaFila].Cells["clmAntiguedad"].Value = calculoAntiguedad.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmTotalIngresos"].Value = calculoTotalIngresos.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmINSSLaboral"].Value = calculoInssLaboral.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmIR"].Value = calculoIr.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmTotalDeducciones"].Value = calculoDeducciones.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmSalarioNeto"].Value = calculoSalarioNeto.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmINATEC"].Value = calculoInatec.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmINSSPatronal"].Value = calculoInssPatronal.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmVacaciones"].Value = calculoVacaciones.ToString("C2");
+            dvgNomina.Rows[NuevaFila].Cells["clmTreceavoMes"].Value = calculoTreceavoMes.ToString("C2");
 
             //limpiar campos 
             txtNombre.Clear();

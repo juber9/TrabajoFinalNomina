@@ -15,16 +15,15 @@ namespace TrabajoFinalNomina
 
         public double CalcularInssLaboral(double totalIngresos)
         {
-            double inssLaboral = totalIngresos * 0.7;
+            double inssLaboral = totalIngresos * 0.07;
             return inssLaboral;
         }
 
         public double CalcularIr(double totalIngresos, double inssLaboral)
         {
-            double calculandoIr = 0;
-            calculandoIr = totalIngresos * 2; 
-            double inssLaboral2 = inssLaboral * 2;
-            calculandoIr = calculandoIr - inssLaboral2;
+            double calculandoIr;
+            calculandoIr = totalIngresos * 2;
+            calculandoIr = calculandoIr - inssLaboral * 2;
             calculandoIr = calculandoIr * 12;
 
             if (calculandoIr > 100000.01)
@@ -53,6 +52,9 @@ namespace TrabajoFinalNomina
                 calculandoIr *= 0.30;
                 calculandoIr += 825000;
                 calculandoIr = calculandoIr / 12;
+            } else if (calculandoIr <= 100000)
+            {
+                calculandoIr = 0;
             }
 
             double ir = calculandoIr;
