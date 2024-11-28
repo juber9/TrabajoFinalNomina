@@ -20,20 +20,31 @@ namespace Canal10
 
         private void button3_Click(object sender, EventArgs e)
         {
+            // Ir al formulario de registro
             FormRegistro fm2 = new FormRegistro();
             fm2.Show();
             this.Hide();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void LogIn(object sender, EventArgs e)
         {
-            FormOpciones mainForm = new FormOpciones();
-            mainForm.Show();
+            string nombreUsuario = txtUsuario.Text;
+            string contraseña = txtContraseña.Text;
+
+            // Verificar si las credenciales son correctas
+            Usuario usuario = ManejoDeUsuarios.ObtenerUsuario(nombreUsuario, contraseña);
+
+            if (usuario != null)
+            {
+                MessageBox.Show("Inicio de sesión exitoso.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FormOpciones mainForm = new FormOpciones();
+                mainForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Nombre de usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
